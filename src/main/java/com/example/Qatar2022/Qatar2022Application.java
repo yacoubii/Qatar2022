@@ -1,6 +1,8 @@
 package com.example.Qatar2022;
 
+import com.example.Qatar2022.entities.TicketEntity;
 import com.example.Qatar2022.entities.UserEntity;
+import com.example.Qatar2022.repositories.TicketRepository;
 import com.example.Qatar2022.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -9,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import static java.time.Month.JANUARY;
@@ -23,7 +26,7 @@ public class Qatar2022Application {
 	@Configuration
 	public class StudentConfig {
 		@Bean
-		CommandLineRunner commandLineRunner(UserRepository repository){
+		CommandLineRunner commandLineRunner(UserRepository repository, TicketRepository ticketRepository){
 			return args-> {
 				UserEntity u = new UserEntity(
 						"Asma",
@@ -38,6 +41,22 @@ public class Qatar2022Application {
 				);
 
 				repository.saveAll( List.of(u));
+
+
+				TicketEntity t = new TicketEntity(
+						"Bayern",
+						"Real Madrid",
+						LocalDate.of(1997, JULY,11),
+						LocalTime.of(11,11,20),
+						(float) 240,
+						"Pelouse",
+						"Final"
+
+
+
+				);
+
+				ticketRepository.saveAll( List.of(t));
 			};
 		}
 	}
