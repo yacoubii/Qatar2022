@@ -1,0 +1,32 @@
+<div class="sidebar">
+    <a [routerLink]="['']" (click)="clickReset()">
+        <div class="logo">
+            <img  src="/assets/fifa.png" alt="logo">
+        </div>
+    </a>
+    <a [routerLink]="['/users']">
+        <div class="item" (click)="clickFun($event)">
+            Users
+        </div>
+    </a>
+    <a [routerLink]="['/spectators']">
+        <div class="item" (click)="clickFun($event)">
+            Spectators
+        </div>
+    </a>
+    <a [routerLink]="['/roles']">
+        <div class="item" (click)="clickFun($event)">
+            Roles
+        </div>
+    </a>
+    <a [routerLink]="['/ticket']">
+        <div class="item" (click)="clickFun($event)">
+            Tickets
+        </div>
+    </a>
+    <a [routerLink]="['/match']">
+        <div class="item" (click)="clickFun($event)">
+            Matches
+        </div>
+    </a>
+</div>
