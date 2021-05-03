@@ -10,7 +10,7 @@
         </div>
     </a>
     <a  href="/spectators">
-        <div *ngIf="isModerator || isAdmin" class="item" (click)="clickFun($event)">
+        <div *ngIf="isModerator" class="item" (click)="clickFun($event)">
             Spectators
         </div>
     </a>
@@ -20,7 +20,7 @@
         </div>
     </a>
     <a  href="/ticket">
-        <div *ngIf="isModerator || isAdmin" class="item" (click)="clickFun($event)">
+        <div *ngIf="isModerator" class="item" (click)="clickFun($event)">
             Tickets
         </div>
     </a>
